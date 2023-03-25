@@ -24,20 +24,20 @@ apt install -y dos2unix debconf-utils
 service cron reload
 service cron restart
 #sl-fix
-cd /usr/bin
-wget -O sl-fix "https://raw.githubusercontent.com/kali-linux-ir/vps/main/sslh-fix/sl-fix"
-chmod +x sl-fix
-sl-fix
-cd
+#cd /usr/bin
+#wget -O sl-fix "https://raw.githubusercontent.com/kali-linux-ir/vps/main/sslh-fix/sl-fix"
+#chmod +x sl-fix
+#sl-fix
+#cd
 echo "Port 3369" >> /etc/ssh/sshd_config
 echo "Port 2269" >> /etc/ssh/sshd_config
 sed -i 's/#AllowTcpForwarding yes/AllowTcpForwarding yes/g' /etc/ssh/sshd_config
 rm -rf /etc/slowdns
 mkdir -m 777 /etc/slowdns
-wget -q -O /etc/slowdns/server.key "https://raw.githubusercontent.com/kali-linux-ir/SLDNS/main/slowdns/server.key"
-wget -q -O /etc/slowdns/server.pub "https://raw.githubusercontent.com/kali-linux-ir/SLDNS/main/slowdns/server.pub"
-wget -q -O /etc/slowdns/sldns-server "https://raw.githubusercontent.com/kali-linux-ir/SLDNS/main/slowdns/sldns-server"
-wget -q -O /etc/slowdns/sldns-client "https://raw.githubusercontent.com/kali-linux-ir/SLDNS/main/slowdns/sldns-client"
+wget -q -O /etc/slowdns/server.key "https://raw.githubusercontent.com/Zeastore/sld/main/server.key"
+wget -q -O /etc/slowdns/server.pub "https://raw.githubusercontent.com/Zeastore/sld/main/server.pub"
+wget -q -O /etc/slowdns/sldns-server "https://raw.githubusercontent.com/Zeastore/sld/main/sldns-server"
+wget -q -O /etc/slowdns/sldns-client "https://raw.githubusercontent.com/Zeastore/sld/main/sldns-client"
 cd
 chmod +x /etc/slowdns/server.key
 chmod +x /etc/slowdns/server.pub
